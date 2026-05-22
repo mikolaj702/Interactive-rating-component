@@ -26,7 +26,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
 
   font-family: Arial, sans-serif;
 
@@ -34,12 +34,20 @@ body {
   color: var(--text-light);
 }
 
+.main-content {
+  inline-size: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   inline-size: min(100%, 22rem);
 }
 
 .card {
-  background: var(--card-color);
+  background-color: var(--card-color);
 
   padding: clamp(1.5rem, 4vw, 2rem);
 
@@ -58,14 +66,18 @@ body {
 
   border-radius: 50%;
 
-  background: var(--circle-color);
+  background-color: var(--circle-color);
 
   color: var(--accent);
+
+  font-size: 1.2rem;
 }
 
 h1,
 h2 {
   margin-block-end: 1rem;
+
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
 }
 
 p {
@@ -73,7 +85,7 @@ p {
 
   color: var(--text-gray);
 
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
@@ -93,11 +105,14 @@ p {
   border: none;
   border-radius: 50%;
 
-  background: var(--circle-color);
+  background-color: var(--circle-color);
 
   color: var(--text-light);
 
   cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
 
   transition:
     background-color var(--transition),
@@ -106,7 +121,8 @@ p {
 }
 
 .rating-btn:hover {
-  background: var(--accent);
+  background-color: var(--accent);
+
   color: black;
 
   transform: scale(1.05);
@@ -118,22 +134,23 @@ p {
 }
 
 .rating-btn.active {
-  background: white;
+  background-color: white;
   color: black;
 }
 
 .submit-btn {
   inline-size: 100%;
 
-  padding: 0.85rem;
+  padding: clamp(0.8rem, 2vw, 1rem);
 
   border: none;
   border-radius: 999px;
 
-  background: var(--accent);
+  background-color: var(--accent);
 
   color: black;
 
+  font-size: 0.95rem;
   font-weight: bold;
   letter-spacing: 0.15rem;
 
@@ -145,8 +162,9 @@ p {
 }
 
 .submit-btn:hover {
-  background: white;
-  transform: translateY(-2px);
+  background-color: white;
+
+  transform: translateY(-0.125rem);
 }
 
 .submit-btn:focus-visible {
@@ -167,11 +185,12 @@ p {
 
   margin-block-end: 1.5rem;
 
-  padding: 0.6rem 1rem;
+  padding: clamp(0.5rem, 2vw, 0.7rem)
+           clamp(1rem, 3vw, 1.2rem);
 
   border-radius: 999px;
 
-  background: var(--circle-color);
+  background-color: var(--circle-color);
 
   color: var(--accent);
 
@@ -181,8 +200,8 @@ p {
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
+    transition: none;
+    animation: none;
+    scroll-behavior: auto;
   }
 }
