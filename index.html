@@ -2,62 +2,128 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Interactive Rating Component</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <div class="container">
+  <main class="main-content">
 
-    <!-- Rating Card -->
-    <div class="card" id="rating-card">
+    <div class="container">
 
-      <div class="star">
-        ★
-      </div>
+      <!-- Rating Card -->
+      <section
+        class="card"
+        id="rating-card"
+        aria-labelledby="rating-title"
+      >
 
-      <h1>How did we do?</h1>
+        <div class="star" aria-hidden="true">
+          ★
+        </div>
 
-      <p>
-        Please let us know how we did with your support request.
-        All feedback is appreciated to help us improve our offering!
-      </p>
+        <h1 id="rating-title">
+          How did we do?
+        </h1>
 
-      <div class="ratings">
-        <button class="rating-btn">1</button>
-        <button class="rating-btn">2</button>
-        <button class="rating-btn">3</button>
-        <button class="rating-btn">4</button>
-        <button class="rating-btn">5</button>
-      </div>
+        <p>
+          Please let us know how we did with your support request.
+          All feedback is appreciated to help us improve our offering!
+        </p>
 
-      <button class="submit-btn" id="submit-btn">
-        SUBMIT
-      </button>
+        <div class="ratings">
+
+          <button
+            type="button"
+            class="rating-btn"
+            aria-label="Rate 1"
+          >
+            1
+          </button>
+
+          <button
+            type="button"
+            class="rating-btn"
+            aria-label="Rate 2"
+          >
+            2
+          </button>
+
+          <button
+            type="button"
+            class="rating-btn"
+            aria-label="Rate 3"
+          >
+            3
+          </button>
+
+          <button
+            type="button"
+            class="rating-btn"
+            aria-label="Rate 4"
+          >
+            4
+          </button>
+
+          <button
+            type="button"
+            class="rating-btn"
+            aria-label="Rate 5"
+          >
+            5
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          class="submit-btn"
+          id="submit-btn"
+        >
+          SUBMIT
+        </button>
+
+      </section>
+
+      <!-- Thank You Card -->
+      <section
+        class="card thank-you hidden"
+        id="thank-you-card"
+        aria-labelledby="thank-you-title"
+      >
+
+        <div
+          class="selected-rating"
+          id="selected-rating"
+        >
+          You selected 0 out of 5
+        </div>
+
+        <h2 id="thank-you-title">
+          Thank you!
+        </h2>
+
+        <p>
+          We appreciate you taking the time to give a rating.
+          If you ever need more support,
+          don’t hesitate to get in touch!
+        </p>
+
+      </section>
 
     </div>
 
-    <!-- Thank You Card -->
-    <div class="card thank-you hidden" id="thank-you-card">
-
-      <div class="selected-rating" id="selected-rating">
-        You selected 0 out of 5
-      </div>
-
-      <h2>Thank you!</h2>
-
-      <p>
-        We appreciate you taking the time to give a rating.
-        If you ever need more support, don’t hesitate to get in touch!
-      </p>
-
-    </div>
-
-  </div>
+  </main>
 
   <script src="script.js"></script>
+
 </body>
 </html>
